@@ -1,9 +1,11 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: dex-ian-dotnet-test-ingress
+  name: dex-ian-dotnet-test-ingress-live
   annotations:
     kubernetes.io/ingress.class: nginx
+    external-dns.alpha.kubernetes.io/set-identifier: dex-ian-dotnet-test-ingress-live-dex-ian-dotnet-test-green
+    external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
     - hosts:
